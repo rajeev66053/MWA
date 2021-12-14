@@ -1,0 +1,21 @@
+<!-- <h1>{{title}}</h1> -->
+
+<ul>
+    <li *ngFor="let brand of brands">        
+        <a routerLink="/brand/{{brand._id}}" class="nav-link">{{brand.name}}</a>
+    </li>
+</ul>
+
+<div>
+    <form  #f="ngForm" (ngSubmit)="addBrand(f)"  name="brandForm">
+    
+        To add a new brand please fill in all the fields below:<BR/>
+
+        Name: <input type="text" name="name" [(ngModel)]="brand.name"/><br/>
+        Founded: <input type="text" name="founded" [(ngModel)]="brand.founded"/><br/>
+        HeadOffice: <input type="text" name="headOffice" [(ngModel)]="brand.headOffice"/><br/>
+        <button type="submit" class="btn-success">Add Brand</button><BR/>
+    
+    </form>
+    
+    </div>

@@ -1,0 +1,31 @@
+<h1>Information about game:</h1>
+
+<p>{{game.title}}</p>
+<button class="btn btn-success" (click)="deleteGame()">
+    Delete
+  </button>
+
+<p>
+    Price:{{game.price|currency}}<br/>
+    Minimum Players:{{game.minPlayers}}<br/>
+    Maximum Players:{{game.maxPlayers}}<br/>
+    Minimium Age:{{game.minAge}}
+</p>
+
+<form #f="ngForm" (ngSubmit)="updateGame(f)" name="updateGameForm">
+
+    To update a game please fill in all the fields below:<BR/>
+
+    Price: <input type="text" name="price" [(ngModel)]="game.price" style="color:black"/><BR/>
+
+    Minimum Number of Players: <input type="text" name="minPlayers" [(ngModel)]="game.minPlayers" style="color:black"/>
+    <BR/>
+    
+    Maximum Number of Players: <input type="text" name="maxPlayers" [(ngModel)]="game.maxPlayers" style="color:black"/><BR/>
+    
+    Minimum Recommended Player Age: <input type="text" name="minAge" [(ngModel)]="game.minAge" style="color:black"/><BR/>
+    
+    <button type="submit" class="btn-success">Update Game</button><BR/>
+
+</form>
+

@@ -1,0 +1,27 @@
+1- What is Node?
+Node is an open-source, cross-platform, server-side JavaScript platform built on Google Chrome's JavaScript Engine (V8 Engine) , where web applications are event-based in an asynchronous manner. Node.js platform uses a “single-threaded event loop.”. Node executes JavaScript code outside of web browser and let us effortlessly develop fast and scalable web applications. It utilizes an event-driven, non-blocking I/O model that makes it lightweight, efficient, and excellent for data-intensive real-time applications that run across shared devices.
+
+2- What is the Event-Loop in Node?
+The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
+Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the poll queue to eventually be executed.
+
+When Node.js starts, it initializes the event loop, processes the provided input script which may make async API calls, schedule timers, or call  then begins processing the event loop. Event loop is an endless loop, which waits for tasks, executes them and then sleeps until it receives more tasks.
+The event loop executes tasks from the event queue only when the call stack is empty i.e. there is no ongoing task.
+
+3- Based on what we learned so far what are the differences between AngularJS and Angular?
+
+
+1.AngularJS works on MVC, Model View Controller Design. Here View shows the information present in the model and controller processes the information.
+Angular uses components and directives. Here component is directive with a template.
+
+
+2.AngularJS code is written in JavaScript.
+Angular code is written in typescript.
+
+
+3.AngularJS code is not mobile friendly.
+Angular developed applications are mobile browser friendly.
+
+4. AngularJS is less manageable in comparison to Angular. 
+Angular is easier to create and maintain large applications.
+

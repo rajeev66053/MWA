@@ -1,0 +1,10 @@
+<h1>Brand details:</h1>
+<p>Name:{{(brandCtrl.brand.name |uppercase)}}</p>
+ <p>Head Office:{{brandCtrl.brand.headOffice}}</p>
+<p>Offices</p>
+ <ul>
+     <li ng-repeat="office in brandCtrl.brand.offices">
+        {{office.city}},{{office.state}},{{office.zip}}
+     </li>
+ </ul>
+

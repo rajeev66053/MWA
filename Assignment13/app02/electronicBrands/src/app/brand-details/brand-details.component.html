@@ -1,0 +1,24 @@
+<h1>Information about brand:</h1>
+
+<p>{{brand.name}}</p>
+<button class="btn btn-success" (click)="deleteBrand()">
+    Delete
+  </button>
+
+<p>
+    name:{{brand.name}}<br/>
+    Founded :{{brand.founded}}<br/>
+    Head Office:{{brand.headOffice}}
+</p>
+
+<form #f="ngForm" (ngSubmit)="updateBrand(f)" name="updateBrandForm">
+
+    To update a brand please fill in all the fields below:<BR/>    
+
+    Name: <input type="text" name="name" [(ngModel)]="brand.name"/><br/>
+    Founded: <input type="text" name="founded" [(ngModel)]="brand.founded"/><br/>
+    HeadOffice: <input type="text" name="headOffice" [(ngModel)]="brand.headOffice"/><br/>
+    <button type="submit" class="btn-success">Update Brand</button><BR/>
+
+</form>
+

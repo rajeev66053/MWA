@@ -1,0 +1,31 @@
+<h1>{{brandsCtrl.title}}</h1>
+
+<form name="brandsCtrl.searchForm" ng-submit="brandsCtrl.searchBrand()">
+    Search: <input type="text" name="search" required ng-model="brandsCtrl.brandName"/>
+    <button type="submit" class="btn-success">Search Brand</button>
+</form>
+
+<ul>
+    <li ng-repeat="brand in brandsCtrl.brands| limitTo:brandsCtrl.pageSize">        
+        <a ng-href="#/brands/{{brand._id}}">{{brand.name}}</a>
+    </li>
+</ul>
+
+<button class="btn-success" ng-disabled="brandsCtrl.pageButtonDisabled(-1)" ng-click="brandsCtrl.paginate(-1)">Previous</button>&nbsp;&nbsp;
+    <button class="btn-success" ng-disabled="brandsCtrl.pageButtonDisabled(1)" ng-click="brandsCtrl.paginate(1)">Next</button>
+    <br /><br />
+    Page {{brandsCtrl.currentPage}} of {{brandsCtrl.totalPages}}
+
+<div ng-if="brandsCtrl.isLoggedIn()">
+    <form name="brandsCtrl.brandForm" ng-submit="brandsCtrl.addBrand()">
+
+        To add a new brand please fill in all the fields below:<BR/>
+
+        Name: <input type="text" name="name" required ng-model="brandsCtrl.newBrandName"/><br/>
+        Founded: <input type="text" name="founded" required ng-model="brandsCtrl.newBrandFounded"/><br/>
+        HeadOffice: <input type="text" name="headOffice" required ng-model="brandsCtrl.newBrandHeadOffice"/><br/>
+
+        <button type="submit" class="btn-success">Add Brand</button><br/>
+
+    </form>
+</div>

@@ -1,0 +1,47 @@
+<h1>{{vm.title}}</h1>
+
+<form name="vm.searchForm" ng-submit="vm.searchGame()">
+    Search: <input type="text" name="search" required ng-model="vm.gameTitle"/>
+    <button type="submit" class="btn-success">Search Game</button>
+</form>
+
+<ul>
+    <li ng-repeat="game in vm.games">
+        <a ng-href="#/game/{{game._id}}">{{game.title}}</a></li>
+</ul>
+
+<button class="btn-success" ng-disabled="vm.pageButtonDisabled(-1)" ng-click="vm.paginate(-1)">Previous</button>&nbsp;&nbsp;
+    <button class="btn-success" ng-disabled="vm.pageButtonDisabled(1)" ng-click="vm.paginate(1)">Next</button>
+    <br /><br />
+    Page {{vm.currentPage}} of {{vm.totalPages}}
+
+<div ng-if="vm.isLoggedIn()">
+<form name="vm.gameForm" ng-submit="vm.addGame()" >
+
+    To add a new game please fill in all the fields below:<BR/>
+
+    Title: <input type="text" name="title" required ng-model="vm.newGameTitle" style="color:black"/><BR/>
+
+    Price: <input type="text" name="price" required ng-model="vm.newGamePrice" style="color:black"/><BR/>
+
+    Year of Publication: <input type="text" name="year" required ng-model="vm.newGameYear" style="color:black"/><BR/>
+
+    Rating: <input type="text" name="rating" required ng-model="vm.newGameRating" style="color:black"/><BR/>
+
+    Minimum Number of Players: <input type="text" name="minPlayers" required ng-pattern="/^[0-9]{1,2}$/" ng-model="vm.newGameMinPlayers" style="color:black"/>
+
+    <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid && vm.gameForm.isSubmitted" style="color:black">Minimum players must be at least 1.</span>
+
+    <BR/>
+
+    Maximum Number of Players: <input type="text" name="maxPlayers" required ng-model="vm.newGameMaxPlayers" style="color:black"/><BR/>
+
+    Minimum Recommended Player Age: <input type="text" name="minAge" required ng-model="vm.newGameMinAge" style="color:black"/><BR/>
+
+    Designer name: <input type="text" name="designer" required ng-model="vm.newGameDesigner" style="color:black"/><BR/>
+
+    <button type="submit" class="btn-success">Add Game</button><BR/>
+
+</form>
+
+</div>

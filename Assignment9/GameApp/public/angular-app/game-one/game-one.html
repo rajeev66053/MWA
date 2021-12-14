@@ -1,0 +1,30 @@
+<h1>Information about game:</h1>
+<p>{{vm.game.title}} 
+    <game-rating stars={{vm.rating}}></game-rating>
+      
+    <input type="button" class="btn btn-success" value="Delete" ng-click="vm.deleteOneGame(vm.game._id)" />
+</p>
+<p>
+    Price:{{vm.game.price |currency}}<br/>
+    Minimium players:{{vm.game.minPlayers}}</br>
+    Maximum players:{{vm.game.maxPlayers}}</br>
+    Minimium Age:{{vm.game.minAge}}</br>
+    Publishers:{{vm.game.publisher.name}}</br>
+</p>
+
+
+<form name="vm.updateDameForm" ng-submit="vm.updateGame()" >
+
+    To add a new game please fill in all the fields below:<BR/>
+
+    Price: <input type="text" name="price" required ng-model="vm.editedGamePrice" style="color:black"/><BR/>
+
+    Minimum Number of Players: <input type="text" name="minPlayers" required ng-pattern="/^[0-9]{1,2}$/" ng-model="vm.editedGameMinPlayers" style="color:black"/>
+    <BR/>
+
+    Maximum Number of Players: <input type="text" name="maxPlayers" required ng-model="vm.editedGameMaxPlayers" style="color:black"/><BR/>
+
+    Minimum Recommended Player Age: <input type="text" name="minAge" required ng-model="vm.editedGameMinAge" style="color:black"/><BR/>
+    <button type="submit" class="btn-success">Update Game</button><BR/>
+
+</form>

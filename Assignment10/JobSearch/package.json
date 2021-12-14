@@ -1,0 +1,24 @@
+{
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "description": "This is MEAN CRUD Application to manage Job Search",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Job",
+    "Search",
+    "MEAN",
+    "App"
+  ],
+  "author": "Rajeev Thapaliya",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.11"
+  }
+}

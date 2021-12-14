@@ -1,0 +1,18 @@
+<h1>{{brandsCtrl.title}}</h1>
+
+<ul>
+    <li ng-repeat="brand in brandsCtrl.brands  | orderBy:'name'">
+        <a ng-href="#/brands/{{brand._id}}">{{(brand.name |uppercase)  }}</a></li>
+</ul>
+
+<form name="brandsCtrl.brandForm" ng-submit="brandsCtrl.addBrand()">
+
+    To add a new brand please fill in all the fields below:<BR/>
+
+    Name: <input type="text" name="name" required ng-model="brandsCtrl.newBrandName"/><br/>
+    Founded: <input type="text" name="founded" required ng-model="brandsCtrl.newBrandFounded"/><br/>
+    HeadOffice: <input type="text" name="headOffice" required ng-model="brandsCtrl.newBrandHeadOffice"/><br/>
+
+    <button type="submit" class="btn-success">Add Brand</button><br/>
+
+</form>

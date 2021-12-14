@@ -1,0 +1,41 @@
+<h1>Brand details:  
+    <input type="button" class="btn btn-success" value="Delete" ng-click="brandCtrl.deleteOneBrand(brandCtrl.brand._id)" />
+</h1>
+<p>Name:{{(brandCtrl.brand.name |uppercase)}}</p>
+ <p>Head Office:{{brandCtrl.brand.headOffice}}</p>
+<p>Offices</p>
+ <ul>
+     <li ng-repeat="office in brandCtrl.brand.offices">
+        {{office.city}},{{office.state}},{{office.zip}}
+     </li>
+ </ul>
+
+ <div ng-if="brandCtrl.isLoggedIn()">
+    <form name="brandCtrl.officeForm" ng-submit="brandCtrl.addOffice()">
+        To add a new office please fill in all the fields below:<br/>
+        State: <input type="text" name="state" required ng-model="brandCtrl.newOfficeState"/><br/>
+        City: <input type="text" name="city" required ng-model="brandCtrl.newOfficeCity"/><br/>
+        Zip: <input type="text" name="zip" required ng-model="brandCtrl.newOfficeZip"/><br/>
+        <button type="submit" class="btn-success">Add Office</button><br/>
+    </form>
+</div>
+
+ <p>Products</p>
+ <ul>
+     <li ng-repeat="product in brandCtrl.brand.products">
+        <a ng-href="#/brands/{{brandCtrl.brand._id}}/products/{{product._id}}">{{(product.type |uppercase)  }}</a></li>
+     </li>
+ </ul>
+
+ <div ng-if="brandCtrl.isLoggedIn()">
+    <form name="brandCtrl.productForm" ng-submit="brandCtrl.addProduct()">
+        To add a new Product please fill in all the fields below:<BR/>
+        Type: <input type="text" name="type" required ng-model="brandCtrl.newProductType"/><br/>
+        Rating: <input type="text" name="rating" required ng-model="brandCtrl.newProductRating"/><br/>
+        Min Price: <input type="text" name="minPrice" required ng-model="brandCtrl.newProductMinPrice"/><br/>
+        Max Price: <input type="text" name="maxPrice" required ng-model="brandCtrl.newProductMaxPrice"/><br/>
+        Feature: <textarea name="feature" required ng-model="brandCtrl.newProductFeature"rows="4" cols="50"></textarea><br/>
+        <button type="submit" class="btn-success">Add Product</button><br/>
+    </form>
+</div>
+

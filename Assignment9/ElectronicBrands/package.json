@@ -1,0 +1,22 @@
+{
+  "name": "electronicbrands",
+  "version": "1.0.0",
+  "description": "This project is all about electronics brands.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": ""
+  },
+  "keywords": [
+    "Elecronics",
+    "Brands"
+  ],
+  "author": "Rajeev",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10"
+  }
+}

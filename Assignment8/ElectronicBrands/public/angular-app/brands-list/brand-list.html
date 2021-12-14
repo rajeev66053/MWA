@@ -1,0 +1,6 @@
+<h1>{{brandsCtrl.title}}</h1>
+
+<ul>
+    <li ng-repeat="brand in brandsCtrl.brands  | orderBy:'name'">
+        <a ng-href="#/brand/{{brand._id}}">{{(brand.name |uppercase)  }}</li>
+</ul>

@@ -1,0 +1,10 @@
+<h1>Location</h1>
+<p>{{locationCtrl.location.city}},{{locationCtrl.location.state}},{{locationCtrl.location.zip}}</p>
+<h2>Update Location:</h2>
+<form name="locationCtrl.jobLocationForm" ng-submit="locationCtrl.updateJobLocation()">
+    State:<input type="text" name="state" required ng-model="locationCtrl.editedJobState"/><br/>
+    City:<input type="text" name="city" required ng-model="locationCtrl.editedJobCity"/><br/>
+    Zip:<input type="number" name="zip" required ng-model="locationCtrl.editedJobZip"/><br/>
+
+    <button type="submit" class="btn-success">Update Location</button><br/>
+</form>

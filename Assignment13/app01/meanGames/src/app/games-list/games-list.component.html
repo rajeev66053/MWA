@@ -1,0 +1,37 @@
+<!-- <h1>{{title}}</h1> -->
+
+<ul>
+    <!-- <li *ngFor="let game of games">{{game._id|order}}<br/>{{game.title}}<br/>{{game.price |currency}}</li> -->
+    <li *ngFor="let game of games">        
+        <a routerLink="/game/{{game._id}}" class="nav-link">{{game.title}}</a>
+        <!-- <a [routerLink]="['/game', {{game._id}}]">{{game.title}} </a> -->
+    </li>
+</ul>
+
+<div>
+    <form  #f="ngForm" (ngSubmit)="addGame(f)"  name="gameForm" >
+    
+        To add a new game please fill in all the fields below:<BR/>
+    
+        Title: <input type="text" name="title" [(ngModel)]="game.title" style="color:black"/><BR/>
+    
+        Price: <input type="text" name="price" [(ngModel)]="game.price" style="color:black"/><BR/>
+    
+        Year of Publication: <input type="text" name="game.year" [(ngModel)]="game.year" style="color:black"/><BR/>
+    
+        Rating: <input type="text" name="rate" [(ngModel)]="game.rate" style="color:black"/><BR/>
+    
+        Minimum Number of Players: <input type="text" name="minPlayers" [(ngModel)]="game.minPlayers" style="color:black"/>
+        <BR/>
+    
+        Maximum Number of Players: <input type="text" name="maxPlayers" [(ngModel)]="game.maxPlayers" style="color:black"/><BR/>
+    
+        Minimum Recommended Player Age: <input type="text" name="minAge" [(ngModel)]="game.minAge" style="color:black"/><BR/>
+    
+        Designer name: <input type="text" name="designers" [(ngModel)]="game.designers" style="color:black"/><BR/>
+    
+        <button type="submit" class="btn-success">Add Game</button><BR/>
+    
+    </form>
+    
+    </div>

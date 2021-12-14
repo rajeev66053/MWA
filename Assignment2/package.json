@@ -1,0 +1,19 @@
+{
+  "name": "assignment2",
+  "version": "1.0.0",
+  "description": "This is the assignment2 written in express  which listens to port 5000 and returns the main page for MEAN games and also return the sum of two numbers provided as path parameter and another number as query string.",
+  "main": "app.js",
+  "scripts": {
+    "start":"node app.js",
+    "test": ""
+  },
+  "keywords": [
+    "MEAN",
+    "Adding-Numbers"
+  ],
+  "author": "Rajeev Thapaliya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

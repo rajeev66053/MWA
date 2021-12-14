@@ -1,0 +1,22 @@
+<h1>{{jobsCtrl.title}}</h1>
+
+<ul>
+    <li ng-repeat="job in jobsCtrl.jobs|orderBy:'title'">
+        <a ng-href="#/job/{{job._id}}">{{job.title|uppercase}}</a>
+    </li>
+</ul>
+
+
+<form name="jobsCtrl.jobForm" ng-submit="jobsCtrl.addJob()">
+
+    To add a new job please fill in all the fields below:<BR/>
+
+    Title: <input type="text" name="title" required ng-model="jobsCtrl.newJobTitle"/><br/>
+    Salary: <input type="number" name="salary" required ng-model="jobsCtrl.newJobSalary"/><br/>
+    Experience: <input type="text" name="experience" required ng-model="jobsCtrl.newJobExperience"/><br/>
+    Skills: <textarea name="skills" ng-model="jobsCtrl.newJobSkills"rows="4" cols="50"></textarea><br/>
+    Description: <textarea name="description" required ng-model="jobsCtrl.newJobDescription"rows="4" cols="50"></textarea><br/>
+
+    <button type="submit" class="btn-success">Add Job</button><br/>
+
+</form>

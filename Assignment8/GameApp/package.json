@@ -1,0 +1,24 @@
+{
+  "name": "GameApp",
+  "version": "1.0.0",
+  "description": "This is my MEAN games Database Driven Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": ""
+  },
+  "keywords": [
+    "MEAN",
+    "Board-Games",
+    "Database-Driven-Application"
+  ],
+  "author": "Rajeev",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.7",
+    "mongoose": "^5.12.10"
+  }
+}

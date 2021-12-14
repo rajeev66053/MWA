@@ -1,0 +1,48 @@
+<h1>Job Details:</h1>
+<input type="button" class="btn btn-success" value="Delete" ng-click="jobCtrl.deleteJob(jobCtrl.job._id)" />
+<br/>
+
+<h2>{{jobCtrl.job.title|uppercase}}</h2>
+
+<div ng-if="jobCtrl.job.location">
+    Location:{{jobCtrl.job.location.city}},{{jobCtrl.job.location.state}},{{jobCtrl.job.location.zip}}<br/>
+    <a ng-href="#/job/{{jobCtrl.job._id}}/location/{{jobCtrl.job.location._id}}" class="btn btn-success">Edit</a>
+</div>
+<div ng-if="!jobCtrl.job.location">
+    <h2>Add Location:</h2>
+    <form name="jobCtrl.jobLocationForm" ng-submit="jobCtrl.addJobLocation()">
+        State:<input type="text" name="state" required ng-model="jobCtrl.newJobState"/><br/>
+        City:<input type="text" name="city" required ng-model="jobCtrl.newJobCity"/><br/>
+        Zip:<input type="number" name="zip" required ng-model="jobCtrl.newJobZip"/><br/>
+
+        <button type="submit" class="btn-success">Add Location</button><br/>
+    </form>
+</div>
+<br/>
+<p>
+    Salary:{{jobCtrl.job.salary | currency}}<br/>
+    Experience Required:{{jobCtrl.job.experience}}</br>
+    Skills Required:
+    <ul>
+        <li ng-repeat="skill in jobCtrl.job.skills">{{skill}}</li>
+    </ul>
+    </br>
+    Description:{{jobCtrl.job.description}}</br>
+	
+    PostDate:{{jobCtrl.job.postDate | date:MMM-dd-yyyy}}<br/>
+</p>
+
+
+<h2>Update Job Detail:</h2>
+<form name="jobCtrl.jobForm" ng-submit="jobCtrl.updateJob()">
+
+    To add a new job please fill in all the fields below:<BR/>
+
+    Salary: <input type="number" name="salary" required ng-model="jobCtrl.editedJobSalary"/><br/>
+    Experience: <input type="text" name="experience" required ng-model="jobCtrl.editedJobExperience"/><br/>
+    Skills: <textarea name="skills" ng-model="jobCtrl.editedJobSkills"rows="4" cols="50"></textarea><br/>
+    Description: <textarea name="description" ng-model="jobCtrl.editedJobDescription"rows="4" cols="50"></textarea><br/>
+
+    <button type="submit" class="btn-success">Update Job</button><br/>
+
+</form>
